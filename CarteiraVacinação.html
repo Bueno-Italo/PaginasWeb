@@ -1,0 +1,128 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carteira de Vacinação Canina</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 20px;
+            text-align: center;
+            border-radius: 50px;
+            background-color: rgb(221, 246, 246);
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .vaccine-card {
+            border: 1px solid #ddd;
+            padding: 20px;
+            margin: 20px;
+            border-radius: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .vaccine-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .vaccine-item {
+            margin-bottom: 10px;
+        }
+
+        button {
+            background-color: #1d6cd3;
+            color: black;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 15px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+            button:hover {
+                background-color: #45a049;
+            }
+    </style>
+</head>
+<body>
+
+    <img src="Documents/Pata.jpeg" />
+    <h1>Carteira de Vacinação Canina</h1>
+
+    <div class="vaccine-card" id="tutorCard">
+        <h2>Nome do Tutor</h2>
+        <ul class="vaccine-list" id="tutorList">
+            <!-- Lista do nome do tutor será adicionada dinamicamente aqui -->
+        </ul>
+        <button onclick="nometutor()">Adicionar Nome</button>
+    </div>
+
+    <div class="vaccine-card" id="animalCard">
+        <h2>Nome do Animal</h2>
+        <ul class="vaccine-list" id="animalList">
+            <!-- Lista do nome do animal será adicionada dinamicamente aqui -->
+        </ul>
+        <button onclick="adicionarnome()">Adicionar Nome</button>
+    </div>
+
+    <div class="vaccine-card" id="vaccineCard">
+        <h2>Vacinas Registradas</h2>
+        <ul class="vaccine-list" id="vaccineList">
+            <!-- Lista de vacinas será adicionada dinamicamente aqui -->
+        </ul>
+        <button onclick="adicionarVacina()">Adicionar Vacina</button>
+    </div>
+
+    <script>
+    function adicionarVacina() {
+        var nomeVacina = prompt("Digite o nome da vacina:");
+        if (nomeVacina) {
+        var vaccineList = document.getElementById("vaccineList");
+
+        var li = document.createElement("li");
+        li.className = "vaccine-item";
+        li.textContent = nomeVacina;
+
+        vaccineList.appendChild(li);
+        }
+    }
+    </script>
+    <script>
+    function adicionarnome() {
+        var nomeAnimal = prompt("Digite o nome do animal:");
+        if (nomeAnimal) {
+        var animalList = document.getElementById("animalList");
+
+        var li = document.createElement("li");
+        li.className = "vaccine-item";
+        li.textContent = nomeAnimal;
+
+        animalList.appendChild(li);
+        }
+    }
+    </script>
+
+    <script>
+        function nometutor() {
+        var nomeTutor = prompt("Digite o nome do tutor:");
+        if (nomeTutor) {
+        var tutorList = document.getElementById("tutorList");
+
+        var li = document.createElement("li");
+        li.className = "vaccine-item";
+        li.textContent = nomeTutor;
+
+        tutorList.appendChild(li);
+        }
+    }
+    </script>
+</body>
+</html>
